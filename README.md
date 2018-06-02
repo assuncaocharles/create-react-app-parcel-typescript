@@ -1,6 +1,6 @@
 # Create React App Parcel 💩 + Typescript
 
-hello! This is a fork of <https://github.com/sw-yx/create-react-app-parcel-typescript> to use typescript instead!
+hello! This is a fork of <https://github.com/sw-yx/create-react-app-parcel> to use typescript instead!
 
 # Install instructions
 
