@@ -157,6 +157,7 @@ module.exports = function(
     args = ['install', '--save', verbose && '--verbose'].filter(e => e);
   }
   args.push('react', 'react-dom');
+  args.push('@types/react', '@types/react-dom'); // for typescript
 
   // Install additional template dependencies, if present
   const templateDependenciesPath = path.join(

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component<{}, { toggle: boolean }> {
   state = { toggle: true };
   toggleToggle = () => this.setState({ toggle: !this.state.toggle });
   render() {
@@ -13,12 +13,7 @@ class App extends Component {
           <h1>
             This app is built with <br />React ⚛️ + Parcel 📦!
           </h1>
-          <img
-            src={logo}
-            onClick={this.toggleToggle}
-            className={'App-logo ' + (toggle && 'Logo-spin')}
-            alt="logo"
-          />
+          <img src={logo} onClick={this.toggleToggle} className={'App-logo ' + (toggle && 'Logo-spin')} alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -34,13 +29,7 @@ function A(props) {
   // you can use object spread because babel-preset-react-app is set up for you
   const { href, children, ...rest } = props;
   return (
-    <a
-      className="App-link"
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      {...rest}
-    >
+    <a className="App-link" href={href} target="_blank" rel="noopener noreferrer" {...rest}>
       {children}
     </a>
   );
