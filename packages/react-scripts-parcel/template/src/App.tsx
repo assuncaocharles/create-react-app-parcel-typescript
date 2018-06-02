@@ -11,13 +11,14 @@ class App extends React.Component<{}, { toggle: boolean }> {
       <div className="App">
         <header className="App-header">
           <h1>
-            This app is built with <br />React ⚛️ + Parcel 📦 + Typescript!
+            This app is built with <br />React ⚛️ + <br /> Parcel 📦 + <br /> Typescript🚀!
           </h1>
           <img src={logo} onClick={this.toggleToggle} className={'App-logo ' + (toggle && 'Logo-spin')} alt="logo" />
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
           <A href="https://reactjs.org/">Learn React</A>
+          <A href="https://github.com/sw-yx/react-typescript-cheatsheet">Learn React+Typescript</A>
           <A href="https://parceljs.org/getting_started.html">Learn Parcel</A>
         </header>
       </div>
