@@ -1,6 +1,6 @@
 {
   "name": "create-react-app-parcel-typescript",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Configuration and scripts for Create React App parcel with typescript",
   "repository": "sw-yx/create-react-app-parcel-typescript",
   "license": "MIT",
