@@ -95,7 +95,7 @@ module.exports = function(
   appPackage.scripts = {
     start: 'react-scripts-parcel start',
     build: 'react-scripts-parcel build',
-    test: 'react-scripts-parcel test --env=jsdom',
+//     test: 'react-scripts-parcel test --env=jsdom',
     eject: 'react-scripts-parcel eject',
   };
 
