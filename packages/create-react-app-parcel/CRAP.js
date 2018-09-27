@@ -225,7 +225,14 @@ function shouldUseYarn(appDir) {
   return (mono.isYarnWs && mono.isAppIncluded) || isYarnAvailable();
 }
 
-function install(root, useYarn, dependencies, verbose, isOnline) {
+function install(
+  root,
+  useYarn,
+  dependencies,
+  verbose,
+  isOnline,
+  isDevOnly = false
+) {
   return new Promise((resolve, reject) => {
     let command;
     let args;
@@ -234,6 +241,9 @@ function install(root, useYarn, dependencies, verbose, isOnline) {
       args = ['add', '--exact'];
       if (!isOnline) {
         args.push('--offline');
+      }
+      if (isDevOnly) {
+        args.push('--dev');
       }
       [].push.apply(args, dependencies);
 
@@ -252,13 +262,13 @@ function install(root, useYarn, dependencies, verbose, isOnline) {
       }
     } else {
       command = 'npm';
-      args = [
-        'install',
-        '--save',
-        '--save-exact',
-        '--loglevel',
-        'error',
-      ].concat(dependencies);
+      args = ['install', '--save-exact', '--loglevel', 'error'];
+      if (isDevOnly) {
+        args.push('--save-dev');
+      } else {
+        args.push('--save');
+      }
+      [].push.apply(args, dependencies);
     }
 
     if (verbose) {
@@ -289,6 +299,7 @@ function run(
 ) {
   const packageToInstall = getInstallPackage(version, originalDirectory);
   const allDependencies = ['react', 'react-dom', packageToInstall];
+  const devDependencies = ['@types/react', '@types/react-dom'];
 
   console.log('Installing packages. This might take a couple of minutes.');
   getPackageName(packageToInstall)
@@ -308,9 +319,12 @@ function run(
       );
       console.log();
 
-      return install(root, useYarn, allDependencies, verbose, isOnline).then(
-        () => packageName
-      );
+      const installDependencies = [
+        install(root, useYarn, allDependencies, verbose, isOnline),
+        install(root, useYarn, devDependencies, verbose, isOnline, true),
+      ];
+
+      return Promise.all(installDependencies).then(() => packageName);
     })
     .then(packageName => {
       checkNodeVersion(packageName);
