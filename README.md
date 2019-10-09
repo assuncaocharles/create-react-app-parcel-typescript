@@ -1,5 +1,7 @@
 # Create React App Parcel 💩 + Typescript
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/assuncaocharles/create-react-app-parcel-typescript.svg)](https://greenkeeper.io/)
+
 hello! This is a fork of <https://github.com/sw-yx/create-react-app-parcel> to use typescript instead!
 
 # Install instructions
