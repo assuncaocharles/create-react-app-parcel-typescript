@@ -15,36 +15,36 @@
     "react-scripts-parcel": "./bin/react-scripts-parcel.js"
   },
   "devDependencies": {
-    "lerna": "^2.11.0",
+    "lerna": "^3.16.5",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
   "optionalDependencies": {
-    "fsevents": "1.2.0"
+    "fsevents": "2.1.0"
   },
   "browserslist": {
     "development": ["last 2 chrome versions", "last 2 firefox versions", "last 2 edge versions"],
     "production": [">1%", "last 4 versions", "Firefox ESR", "not ie < 11"]
   },
   "dependencies": {
-    "@babel/core": "7.0.0-beta.46",
-    "@babel/runtime": "7.0.0-beta.46",
+    "@babel/core": "7.6.3",
+    "@babel/runtime": "7.6.3",
     "babel-core": "^6.26.3",
-    "babel-jest": "^22.4.3",
-    "babel-preset-react-app": "^3.1.1",
-    "browserslist": "2.11.3",
-    "chalk": "2.3.0",
-    "eslint": "4.15.0",
+    "babel-jest": "^24.9.0",
+    "babel-preset-react-app": "^9.0.2",
+    "browserslist": "4.7.0",
+    "chalk": "2.4.2",
+    "eslint": "6.5.1",
     "express": "^4.16.3",
-    "find-pkg": "1.0.0",
-    "fs-extra": "5.0.0",
-    "globby": "^8.0.1",
-    "graphql": "0.12.3",
+    "find-pkg": "2.0.0",
+    "fs-extra": "8.1.0",
+    "globby": "^10.0.1",
+    "graphql": "14.5.8",
     "graphql-tag": "^2.9.2",
-    "inquirer": "5.0.0",
-    "jest": "22.4.1",
+    "inquirer": "7.0.0",
+    "jest": "24.9.0",
     "parcel-bundler": "^1.8.1",
-    "pkg-up": "2.0.0",
-    "react-dev-utils": "^5.0.0"
+    "pkg-up": "3.1.0",
+    "react-dev-utils": "^9.1.0"
   }
 }
